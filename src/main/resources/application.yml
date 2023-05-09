@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: quartz-demo
+  quartz:
+    properties:
+      job-store-type: memory
+
+quartz:
+  factory:
+    simpleTrigger:
+      enabled: ${QUARTZ_FACTORY_SIMPLE_TRIGGER_ENABLED:true}
+      startDelay: ${QUARTZ_FACTORY_SIMPLE_TRIGGER_START_DELAY:30}
+      repeatInterval: ${QUARTZ_FACTORY_SIMPLE_TRIGGER_REPEAT_INTERVAL:30}
+    cronTrigger:
+      enabled: ${QUARTZ_FACTORY_CRON_TRIGGER_ENABLED:false}
+      startDelay: ${QUARTZ_FACTORY_CRON_TRIGGER_START_DELAY:60}
+      cron: ${QUARTZ_FACTORY_CRON_TRIGGER_CRON:0 0 6-23 * * ?}
